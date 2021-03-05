@@ -6,7 +6,27 @@ license = "MIT"
 edition = "2018"
 
 [dependencies]
-bevy = { git = "https://github.com/bevyengine/bevy/", default-features = false, features = ["render"] }
+thiserror = "1.0"
+itertools = "0.10"
+
+[dependencies.bevy]
+# git = "https://github.com/bevyengine/bevy/"
+path = "../bevy"
+default-features = false
+features = ["render"]
+
+[dependencies.tabbycat]
+path = "../tabbycat"
+# version = "0.1.2"
+features = ["attributes"]
 
 [dev-dependencies]
-bevy = { git = "https://github.com/bevyengine/bevy/", default-features = false, features = ["render", "bevy_wgpu", "x11"] }
+
+[dev-dependencies.bevy]
+# git = "https://github.com/bevyengine/bevy/"
+path = "../bevy"
+default-features = false
+features = ["render", "bevy_wgpu", "x11"]
+
+[patch.crates-io]
+# tabbycat = { git = "https://github.com/mtsr/tabbycat", branch = "develop" }

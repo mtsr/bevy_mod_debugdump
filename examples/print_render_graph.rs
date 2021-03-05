@@ -10,7 +10,7 @@ fn main() {
         .run();
 }
 fn debug(render_graph: Res<RenderGraph>) {
-    let dot = render_graph_dot(&*render_graph);
+    let dot = render_graph_dot(&*render_graph).unwrap();
     println!("{}", dot);
     std::process::exit(0);
 }
